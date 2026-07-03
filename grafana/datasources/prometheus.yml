@@ -1,0 +1,28 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    basicAuth: true
+    basicAuthUser: admin
+    secureJsonData:
+      basicAuthPassword: SummerSaltCJ7_!2026
+
+  - name: etcd
+    type: prometheus
+    access: proxy
+    url: https://127.0.0.1:2379
+    jsonData:
+      tlsSkipVerify: true
+      tlsAuth: true
+      tlsAuthMethod: Certificate
+      serverName: etcd
+    secureJsonData:
+      tlsCACert: /etc/grafana/certs/ca.crt
+      tlsClientCert: /etc/grafana/certs/server.crt
+      tlsClientKey: /etc/grafana/certs/server.key
+    editable: false
