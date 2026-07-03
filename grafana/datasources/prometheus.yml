@@ -7,10 +7,6 @@ datasources:
     url: http://prometheus:9090
     isDefault: true
     editable: false
-    basicAuth: true
-    basicAuthUser: admin
-    secureJsonData:
-      basicAuthPassword: SummerSaltCJ7_!2026
 
   - name: etcd
     type: prometheus
